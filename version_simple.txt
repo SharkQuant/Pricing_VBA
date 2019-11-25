@@ -1,0 +1,52 @@
+Version simpliste
+
+Variables nb_chev_partant, nb_chev_joués, X, Y, factoriel_n, factoriel_np, factoriel_p,  i en numerique
+
+Debut
+
+  Ecrire "Entrer le nombre de chevaux partants puis le nombre de chevaux joués : "
+  Lire nb_chev_partant, nb_chev_joués
+  
+  factoriel_n  <- 1
+  i <- 1
+
+  Pour i <- 2 à nb_chev_partant 
+    factoriel_n <- nb_chev_partant * i
+  i suivant
+  
+  factoriel_np <- 1
+  i <- 1
+
+  Pour i <- 2 à (nb_chev_partant - nb_chev_joués)
+    factoriel_np <- (nb_chev_partant - nb_chev_joués) * i
+  i suivant
+
+  X <- factoriel_n / factoriel_np
+
+  factoriel_p <- 1
+  i <- 1
+
+  Pour i <- 2 à nb_chev_joués
+    factoriel_p <- factoriel_p * i
+  
+  Y <- X / factoriel_p
+
+  Ecrire "Dans l'ordre : une chance sur ", X, " de gagner."		
+  Ecrire "Dans le désordre : une chance sur ", Y, " de gagner."
+
+Fin
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	

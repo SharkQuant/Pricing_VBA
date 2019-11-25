@@ -1,0 +1,28 @@
+Version optimisée :
+
+Variables nb_chev_partant, nb_chev_joués, X, Y, factoriel_p,  i en numerique
+
+Debut
+
+Ecrire "Entrer le nombre de chevaux partants puis le nombre de chevaux joués : "
+Lire nb_chev_partant, nb_chev_joués
+
+X <- 1
+factoriel_p <- 1
+
+Pour i <- 2 à nb_chev_partant
+	SI i <= nb_chev_joués ALORS
+		factoriel_p <- factoriel_p * i
+	FINSI
+	SI i >= (nb_chev_partant - nb_chev_joués + 1) ALORS
+		X <- X * i
+	FINSI
+i suivant
+
+Y <- X / factoriel_p
+
+
+Ecrire "Dans l'ordre : une chance sur ", X, " de gagner."		
+Ecrire "Dans le désordre : une chance sur ", Y, " de gagner."
+
+Fin
