@@ -1,0 +1,145 @@
+Exo 9.6 : 
+
+Variable texte, alphabet  en char
+Variable i en num
+
+Debut
+
+Ecrire "Quel est le texte à crypter ? : "
+Lire texte
+
+alphabet <- "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+Pour i <- 1 à len(texte)
+
+	pos <- trouve(alphabet, mid(texte, i, 1))
+
+	mid(texte, i, 1) <- mid(alphabet, pos, mod(pos + 1, 26))
+
+i suivant
+
+Fin
+
+--------------------------------------------
+
+Exo 9.7 : 
+
+Variable texte, alphabet  en char
+Variable i, décalage, pos en num
+
+Debut
+
+Ecrire "Quel est le texte à crypter ? : "
+Lire texte
+Ecrire "Quel est le nombre de décalage ? : "
+Lire décalage
+
+alphabet <- "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+Pour i <- 1 à len(texte)
+
+	pos <- trouve(alphabet, mid(texte, i, 1))
+
+	mid(texte, i, 1) <- mid(alphabet, mod(pos + décalage, 26) - 1, 1)
+
+i suivant
+
+Fin
+
+
+--------------------------------------------
+
+Exo 9.8 :
+
+Variable texte, alphabet, clé  en char
+Variable i, pos en num
+
+Debut
+
+Ecrire "Quel est le texte à crypter ? : "
+Lire texte
+Ecrire "Entrez la clé : "
+Lire clé
+
+alphabet <- "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+Pour i <- 1 à len(texte)
+
+	pos <- trouve(alphabet, mid(texte, i, 1))
+
+	mid(texte, i, 1) <- mid(clé, pos, 1)
+
+i suivant
+
+Fin
+
+
+--------------------------------------------
+
+Exo 9.9 :
+
+Variable texte, cle, alphabet, texte_mod en char
+Variable i, j, pos_clé en num
+ 
+Debut
+
+Ecrire "Quel est le texte à crypter ? : "
+Lire texte
+Ecrire "Entrez la clé : "
+Lire clé
+
+alphabet <- "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+texte_mod <- ""
+
+j <- 1
+
+Pour i <- 1 à len(texte)
+
+	SI trouve(alphabet, mid(texte, i, 1)) <> 0  ALORS
+
+		décalage <- trouve(alphabet, mid(texte, i, 1))
+
+		pos_clé <- trouve(alphabet, mid(clé, mod(j, len(clé)), 1))
+
+		texte_mod <- texte_mod & mid(alphabet, mod(pos_clé + décalage, 26) - 1, 1)
+	
+	SINON
+		texte_mod <- texte_mod & mid(texte, i, 1)
+	FINSI
+
+	j <- j + 1
+
+i suivant
+
+
+Fin
+
+--------------------------------------------
+
+Exo 9.10 :
+
+Variable entier en num
+
+Debut
+
+Ecrire "Entrez un entier : "
+Lire entier
+
+SI ((entier/2) - Ent(entier/2)) = 0 ALORS
+	Ecrire "C'est un nombre pair"
+SINON
+	Ecrire "C'est nombre impair"
+FINSI
+
+Fin
+
+
+
+
+
+
+
+
+
+
